@@ -97,3 +97,7 @@ RUST_BACKTRACE=full RUST_LOG=info HF_XET_LOG_FILE=/tmp/xet.log cargo test -p cas
 ```bash
 cargo test -p cas_client simulation -- --nocapture
 ```
+
+```
+RUST_BACKTRACE=full RUST_LOG=info ./target/debug/local_cas_server --data-directory /pciessd/cxy_test/xet_data --port 9001
+```

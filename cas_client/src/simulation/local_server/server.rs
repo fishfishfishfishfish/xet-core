@@ -43,6 +43,7 @@ use super::handlers;
 use crate::RemoteClient;
 use crate::error::{CasClientError, Result};
 use crate::simulation::{DirectAccessClient, LocalClient, MemoryClient};
+use tracing_subscriber::EnvFilter;
 
 /// Configuration for the local CAS server.
 #[derive(Clone, Debug)]
@@ -645,6 +646,9 @@ mod tests {
     /// Main test that runs all server checks with both in-memory and disk-backed storage.
     #[tokio::test]
     async fn test_local_server() {
+        // Initialize tracing with environment filter (respects RUST_LOG)
+        tracing_subscriber::fmt().with_env_filter(EnvFilter::from_default_env()).init();
+
         // Test with in-memory storage
         {
             tracing::info!("Testing with in-memory storage");
