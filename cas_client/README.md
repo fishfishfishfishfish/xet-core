@@ -10,7 +10,7 @@ These are stored in [interface.rs](../src/interface.rs).
 ### Main impl of Client trait
 
 - [remote_client.rs](../src/remote_client.rs): This is the main impl of Client - and is responsible for communicating with a remote CAS.
-- [../src/local_client.rs]: This is an impl of Client for local filesystem usage. It is only used for testing.
+- [../src/simulation/local_client.rs]: This is an impl of Client for local filesystem usage. It is only used for testing.
 
 ### Caching
 
